@@ -1,0 +1,37 @@
+.community {
+    @include background-cover;
+    @extend %of-hidden;
+
+    &__content {
+        h2 {
+            @extend %mb-20;
+        }
+
+        .input-group {
+            max-inline-size: 550px;
+            margin-inline: auto;
+
+            input {
+                background-color: rgba($white-color, $alpha: .30);
+                color: $white-color;
+                border-color: rgba($white-color, $alpha: .30);
+
+                &::placeholder {
+                    color: $white-color;
+                }
+
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                    border-color: rgba($theme-color, $alpha: .60);
+                }
+            }
+
+            .default-btn {
+                &:hover {
+                    transform: none;
+                }
+            }
+        }
+    }
+}

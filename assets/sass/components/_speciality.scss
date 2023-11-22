@@ -1,0 +1,56 @@
+.speciality {
+    @extend %of-hidden;
+
+    &__item {
+        @extend %text-center;
+        padding: 30px 20px;
+        background-color: $offwhite-color;
+        border-radius: 5px;
+        @include add-prefix(transition, $transition);
+
+        @include hover {
+            .speciality__inner {
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+
+    }
+
+    &__inner {
+        @extend %p-rel;
+
+        &:after {
+            @extend %p-abs,
+            %w-100;
+            @include add-prefix(transform, translateX(-50%));
+            @include add-prefix(transition, $transition);
+            background-image: url(../images/speciality/shape.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            top: -10px;
+            left: 50%;
+            height: 50%;
+            z-index: -1;
+            opacity: .1;
+        }
+    }
+
+    &__thumb {
+        @extend %mb-30;
+    }
+
+    &__content {
+        h4 {
+            @extend %mb-15;
+        }
+
+        h4,
+        p {
+            color: $title-color;
+        }
+    }
+
+}
